@@ -10,4 +10,12 @@ import UIKit
 
 class LevelMakerViewController: UIViewController {
     
+    @IBOutlet weak var playArea: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        playArea.layer.borderColor = UIColor.black.cgColor
+        playArea.layer.borderWidth = 1
+    }
+    
 }

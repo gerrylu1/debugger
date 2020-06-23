@@ -30,7 +30,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="AKc-Tk-onz">
+                                <rect key="frame" x="139.5" y="379" width="135" height="138"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hka-MO-nOu">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <segue destination="gBa-bd-RIA" kind="show" id="qEf-ka-NKf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16s-T8-EnV">
+                                        <rect key="frame" x="0.0" y="94" width="135" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Level Maker"/>
+                                        <connections>
+                                            <segue destination="DIS-pL-0po" kind="show" id="q5i-N3-pdj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debugger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdU-mj-JCE">
+                                <rect key="frame" x="130" y="158" width="154" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SdU-mj-JCE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="1VX-fH-g1Q"/>
+                            <constraint firstItem="AKc-Tk-onz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8NJ-G8-xLv"/>
+                            <constraint firstItem="SdU-mj-JCE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DcM-xA-ehX"/>
+                            <constraint firstItem="AKc-Tk-onz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wIc-Rx-sQN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qPe-4a-ml0"/>
@@ -39,31 +74,80 @@
             </objects>
             <point key="canvasLocation" x="132" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Level Browser View Controller-->
         <scene sceneID="xRI-fa-e0Q">
             <objects>
-                <viewController id="DIS-pL-0po" sceneMemberID="viewController">
+                <viewController id="DIS-pL-0po" customClass="LevelBrowserViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uVk-9D-lXS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tor-yO-8Ql">
+                                <rect key="frame" x="20" y="118" width="374" height="714"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to create a new level?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9Y-Ii-xGn">
+                                        <rect key="frame" x="0.0" y="0.0" width="264.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffz-6v-F35">
+                                        <rect key="frame" x="0.0" y="40.5" width="91" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="New Level"/>
+                                        <connections>
+                                            <segue destination="ppW-79-4Tc" kind="show" id="gAj-bq-Wtv"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or, remove existing levels." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toi-zG-xeA">
+                                        <rect key="frame" x="0.0" y="96.5" width="199.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d09-Gs-9ku">
+                                        <rect key="frame" x="0.0" y="137" width="374" height="577"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BTF-zZ-erA">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BTF-zZ-erA" id="YH4-cK-3oD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Tor-yO-8Ql" firstAttribute="top" secondItem="LSM-R4-vxQ" secondAttribute="top" constant="30" id="68e-0s-fuo"/>
+                            <constraint firstItem="Tor-yO-8Ql" firstAttribute="trailing" secondItem="LSM-R4-vxQ" secondAttribute="trailing" constant="-20" id="HTz-G2-NMb"/>
+                            <constraint firstItem="Tor-yO-8Ql" firstAttribute="leading" secondItem="LSM-R4-vxQ" secondAttribute="leading" constant="20" id="OAm-pk-SRT"/>
+                            <constraint firstItem="Tor-yO-8Ql" firstAttribute="bottom" secondItem="LSM-R4-vxQ" secondAttribute="bottom" constant="-30" id="uvm-dL-MYk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LSM-R4-vxQ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="T9t-qQ-PPA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhT-Qh-Nu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="468"/>
+            <point key="canvasLocation" x="863.768115942029" y="467.41071428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Level Maker View Controller-->
         <scene sceneID="363-pJ-yTB">
             <objects>
-                <viewController id="ppW-79-4Tc" sceneMemberID="viewController">
+                <viewController id="ppW-79-4Tc" customClass="LevelMakerViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEd-mr-v6S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="j8O-YL-rTd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RyS-lj-2Tl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQQ-Kj-f0H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,15 +176,16 @@
                             <outlet property="delegate" destination="gBa-bd-RIA" id="Xva-0z-MZX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="fuF-Pi-MUK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8b-pA-Zs2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="-185"/>
         </scene>
-        <!--View Controller-->
+        <!--Player View Controller-->
         <scene sceneID="bW2-ru-Tfb">
             <objects>
-                <viewController id="9pw-pH-6Cb" sceneMemberID="viewController">
+                <viewController id="9pw-pH-6Cb" customClass="PlayerViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MMn-Q3-ToO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

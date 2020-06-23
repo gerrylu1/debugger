@@ -13,6 +13,7 @@
 		EEB8601C24A1ED6900EBFDF9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601B24A1ED6900EBFDF9 /* PlayerViewController.swift */; };
 		EEB8601F24A1EE8E00EBFDF9 /* Debugger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601D24A1EE8E00EBFDF9 /* Debugger.xcdatamodeld */; };
 		EEB8602124A1F57200EBFDF9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8602024A1F57200EBFDF9 /* DataController.swift */; };
+		EEB8602324A1FDE700EBFDF9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8602224A1FDE700EBFDF9 /* Secrets.swift */; };
 		EED6C58C24A1E07A008CFBBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED6C58B24A1E07A008CFBBD /* AppDelegate.swift */; };
 		EED6C58E24A1E07A008CFBBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED6C58D24A1E07A008CFBBD /* SceneDelegate.swift */; };
 		EED6C59024A1E07A008CFBBD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED6C58F24A1E07A008CFBBD /* WelcomeViewController.swift */; };
@@ -28,6 +29,7 @@
 		EEB8601B24A1ED6900EBFDF9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EEB8601E24A1EE8E00EBFDF9 /* Debugger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Debugger.xcdatamodel; sourceTree = "<group>"; };
 		EEB8602024A1F57200EBFDF9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		EEB8602224A1FDE700EBFDF9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		EED6C58824A1E07A008CFBBD /* Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED6C58B24A1E07A008CFBBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EED6C58D24A1E07A008CFBBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		EEB8601324A1E93600EBFDF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EEB8602224A1FDE700EBFDF9 /* Secrets.swift */,
 				EEB8601424A1E94C00EBFDF9 /* Data */,
 			);
 			name = Model;
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEB8601824A1EBF500EBFDF9 /* LevelMakerViewController.swift in Sources */,
+				EEB8602324A1FDE700EBFDF9 /* Secrets.swift in Sources */,
 				EED6C59024A1E07A008CFBBD /* WelcomeViewController.swift in Sources */,
 				EEB8601F24A1EE8E00EBFDF9 /* Debugger.xcdatamodeld in Sources */,
 				EEB8601A24A1ED0E00EBFDF9 /* LevelBrowserViewController.swift in Sources */,

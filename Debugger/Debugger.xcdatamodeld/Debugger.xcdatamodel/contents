@@ -10,10 +10,10 @@
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isCustom" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="bugs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bug" inverseName="level" inverseEntity="Bug"/>
+        <relationship name="bugs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bug" inverseName="level" inverseEntity="Bug"/>
     </entity>
     <elements>
-        <element name="Bug" positionX="-54" positionY="18" width="128" height="73"/>
+        <element name="Bug" positionX="155.77734375" positionY="9.03125" width="128" height="73"/>
         <element name="Level" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

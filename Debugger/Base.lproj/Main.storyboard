@@ -150,10 +150,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="O1A-fE-CT1">
-                                <rect key="frame" x="57" y="181" width="300" height="534.5"/>
+                                <rect key="frame" x="57" y="201" width="300" height="494"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6hB-ME-07h">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="124.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Mu-2p-L8v">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
@@ -186,38 +186,21 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rnO-xK-ZRn">
-                                                <rect key="frame" x="0.0" y="104" width="300" height="20.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ho-yJ-NQI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeW-97-MSa">
-                                                        <rect key="frame" x="68" y="0.0" width="232" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sjR-b7-J6k">
-                                        <rect key="frame" x="0.0" y="184.5" width="300" height="350"/>
+                                        <rect key="frame" x="0.0" y="144" width="300" height="350"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1LD-YA-Bdh">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wl-8F-vV5">
                                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="30"/>
-                                                        <state key="normal" title="Start"/>
+                                                        <state key="normal" title="Add"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic0-b7-FVN">
                                                         <rect key="frame" x="116.5" y="0.0" width="67" height="30"/>
-                                                        <state key="normal" title="Pause"/>
+                                                        <state key="normal" title="Remove"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nlg-jJ-tvd">
                                                         <rect key="frame" x="233.5" y="0.0" width="66.5" height="30"/>

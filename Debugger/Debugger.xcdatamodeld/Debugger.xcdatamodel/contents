@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Bug" representedClassName="Bug" syncable="YES" codeGenerationType="class">
-        <attribute name="timeOfEntry" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="xLocation" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="yLocation" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="level" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Level" inverseName="bugs" inverseEntity="Level"/>
     </entity>
     <entity name="Level" representedClassName="Level" syncable="YES" codeGenerationType="class">
         <attribute name="bgImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-        <attribute name="durationOfEachBug" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isCustom" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="bugs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bug" inverseName="level" inverseEntity="Bug"/>
     </entity>
     <elements>
-        <element name="Bug" positionX="155.77734375" positionY="9.03125" width="128" height="73"/>
-        <element name="Level" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Bug" positionX="155.77734375" positionY="9.03125" width="128" height="88"/>
+        <element name="Level" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

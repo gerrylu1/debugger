@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "debugging_300.png",
+      "filename" : "debugging_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "debugging_450.png",
+      "filename" : "debugging_3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

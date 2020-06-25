@@ -55,7 +55,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="About"/>
                                         <connections>
-                                            <segue destination="yuA-hJ-28Q" kind="show" id="vX6-oh-qNN"/>
+                                            <segue destination="yuA-hJ-28Q" kind="presentation" id="vX6-oh-qNN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -94,16 +94,28 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
-        <!--About-->
+        <!--About View Controller-->
         <scene sceneID="HcZ-Vy-A8c">
             <objects>
-                <viewController title="About" id="yuA-hJ-28Q" sceneMemberID="viewController">
+                <viewController id="yuA-hJ-28Q" customClass="AboutViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WZq-XY-cCX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJS-AI-SSb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="About" id="QEw-Xz-afK">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="cV0-em-iCt">
+                                            <connections>
+                                                <action selector="doneBarButton:" destination="yuA-hJ-28Q" id="l3c-L2-YdK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jF1-Hv-ZEw">
-                                <rect key="frame" x="20" y="108" width="374" height="383"/>
+                                <rect key="frame" x="20" y="76" width="374" height="383"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debugger is a simple bug squashing game. You can play default levels or create your own levels." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4To-cv-rzF">
                                         <rect key="frame" x="0.0" y="0.0" width="368" height="41"/>
@@ -149,8 +161,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="jF1-Hv-ZEw" firstAttribute="trailing" secondItem="Plr-4i-Dux" secondAttribute="trailing" constant="-20" id="DZN-TD-IVP"/>
-                            <constraint firstItem="jF1-Hv-ZEw" firstAttribute="top" secondItem="Plr-4i-Dux" secondAttribute="top" constant="20" id="IrE-Zz-g4j"/>
+                            <constraint firstItem="CJS-AI-SSb" firstAttribute="trailing" secondItem="Plr-4i-Dux" secondAttribute="trailing" id="FS1-0b-JIK"/>
+                            <constraint firstItem="CJS-AI-SSb" firstAttribute="top" secondItem="Plr-4i-Dux" secondAttribute="top" id="H5Z-fV-fma"/>
+                            <constraint firstItem="jF1-Hv-ZEw" firstAttribute="top" secondItem="CJS-AI-SSb" secondAttribute="bottom" constant="20" id="IrE-Zz-g4j"/>
                             <constraint firstItem="jF1-Hv-ZEw" firstAttribute="leading" secondItem="Plr-4i-Dux" secondAttribute="leading" constant="20" id="QZ8-4w-rfu"/>
+                            <constraint firstItem="CJS-AI-SSb" firstAttribute="leading" secondItem="Plr-4i-Dux" secondAttribute="leading" id="YMy-Ig-xaT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Plr-4i-Dux"/>
                     </view>

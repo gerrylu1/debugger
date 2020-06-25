@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE3C5A6424A5350700E6454C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C5A6324A5350700E6454C /* AboutViewController.swift */; };
 		EEB8601624A1EBD100EBFDF9 /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601524A1EBD100EBFDF9 /* LevelSelectionViewController.swift */; };
 		EEB8601824A1EBF500EBFDF9 /* LevelMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */; };
 		EEB8601A24A1ED0E00EBFDF9 /* LevelBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601924A1ED0E00EBFDF9 /* LevelBrowserViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE3C5A6324A5350700E6454C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		EEB8601524A1EBD100EBFDF9 /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
 		EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMakerViewController.swift; sourceTree = "<group>"; };
 		EEB8601924A1ED0E00EBFDF9 /* LevelBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBrowserViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */,
 				EEB8601924A1ED0E00EBFDF9 /* LevelBrowserViewController.swift */,
 				EEB8601B24A1ED6900EBFDF9 /* PlayerViewController.swift */,
+				EE3C5A6324A5350700E6454C /* AboutViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				EEB8601824A1EBF500EBFDF9 /* LevelMakerViewController.swift in Sources */,
 				EEB8602324A1FDE700EBFDF9 /* Secrets.swift in Sources */,
+				EE3C5A6424A5350700E6454C /* AboutViewController.swift in Sources */,
 				EED6C59024A1E07A008CFBBD /* WelcomeViewController.swift in Sources */,
 				EEB8601F24A1EE8E00EBFDF9 /* Debugger.xcdatamodeld in Sources */,
 				EEB8601A24A1ED0E00EBFDF9 /* LevelBrowserViewController.swift in Sources */,

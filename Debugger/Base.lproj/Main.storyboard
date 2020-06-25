@@ -105,8 +105,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jF1-Hv-ZEw">
                                 <rect key="frame" x="20" y="108" width="374" height="383"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debugger is a bug squashing game. You can play default levels or create your own levels." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4To-cv-rzF">
-                                        <rect key="frame" x="0.0" y="0.0" width="344.5" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debugger is a simple bug squashing game. You can play default levels or create your own levels." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4To-cv-rzF">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -236,7 +236,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="O1A-fE-CT1">
-                                <rect key="frame" x="57" y="201" width="300" height="494"/>
+                                <rect key="frame" x="57" y="182" width="300" height="532"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6hB-ME-07h">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
@@ -275,7 +275,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sjR-b7-J6k">
-                                        <rect key="frame" x="0.0" y="144" width="300" height="350"/>
+                                        <rect key="frame" x="0.0" y="144" width="300" height="388"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1LD-YA-Bdh">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -283,10 +283,18 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wl-8F-vV5">
                                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="30"/>
                                                         <state key="normal" title="Add"/>
+                                                        <connections>
+                                                            <action selector="addButtonTapped:" destination="ppW-79-4Tc" eventType="touchUpInside" id="qFR-qj-Asl"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic0-b7-FVN">
                                                         <rect key="frame" x="116.5" y="0.0" width="67" height="30"/>
-                                                        <state key="normal" title="Remove"/>
+                                                        <state key="normal" title="Remove">
+                                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="removeButtonTapped:" destination="ppW-79-4Tc" eventType="touchUpInside" id="Eeh-4L-0et"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nlg-jJ-tvd">
                                                         <rect key="frame" x="233.5" y="0.0" width="66.5" height="30"/>
@@ -301,6 +309,12 @@
                                                     <constraint firstAttribute="height" constant="300" id="31e-Nk-8VI"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out of Play Area" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntg-pf-ady">
+                                                <rect key="frame" x="0.0" y="370" width="300" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -315,7 +329,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="RyS-lj-2Tl"/>
                     <connections>
+                        <outlet property="addButton" destination="6wl-8F-vV5" id="0HI-H8-lii"/>
+                        <outlet property="outOfAreaLabel" destination="ntg-pf-ady" id="YuV-by-5r9"/>
                         <outlet property="playArea" destination="XZ6-nc-kdd" id="daP-pl-hpR"/>
+                        <outlet property="removeButton" destination="Ic0-b7-FVN" id="vsw-0a-Qfb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQQ-Kj-f0H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

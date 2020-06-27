@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,7 +64,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="wJb-XF-lf9" userLabel="Game Title Stack View">
                                 <rect key="frame" x="44" y="158" width="326" height="136"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugging" translatesAutoresizingMaskIntoConstraints="NO" id="j0s-aa-xgl">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Debugging" translatesAutoresizingMaskIntoConstraints="NO" id="j0s-aa-xgl">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="136"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="136" id="77Z-77-vkL"/>
@@ -135,7 +136,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bug" translatesAutoresizingMaskIntoConstraints="NO" id="hCz-fu-bYy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bug" translatesAutoresizingMaskIntoConstraints="NO" id="hCz-fu-bYy">
                                         <rect key="frame" x="0.0" y="187" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="G0I-2u-cgk"/>
@@ -148,7 +149,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugging" translatesAutoresizingMaskIntoConstraints="NO" id="lbo-F1-1S6">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Debugging" translatesAutoresizingMaskIntoConstraints="NO" id="lbo-F1-1S6">
                                         <rect key="frame" x="0.0" y="348" width="50" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="MAX-kO-UZ9"/>
@@ -175,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="806.91964285714278"/>
         </scene>
-        <!--Level Browser View Controller-->
+        <!--Level Maker-->
         <scene sceneID="xRI-fa-e0Q">
             <objects>
                 <viewController id="DIS-pL-0po" customClass="LevelBrowserViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
@@ -236,13 +237,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LSM-R4-vxQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="T9t-qQ-PPA"/>
+                    <navigationItem key="navigationItem" title="Level Maker" id="T9t-qQ-PPA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhT-Qh-Nu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="863.768115942029" y="467.41071428571428"/>
         </scene>
-        <!--Level Maker View Controller-->
+        <!--Level Maker-->
         <scene sceneID="363-pJ-yTB">
             <objects>
                 <viewController id="ppW-79-4Tc" customClass="LevelMakerViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
@@ -250,6 +251,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MGd-iR-91m">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="O1A-fE-CT1">
                                 <rect key="frame" x="57" y="182" width="300" height="532"/>
                                 <subviews>
@@ -284,6 +288,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ija-8w-aSa">
                                                         <rect key="frame" x="158" y="0.0" width="142" height="30"/>
                                                         <state key="normal" title="Choose"/>
+                                                        <connections>
+                                                            <segue destination="0L2-Ck-eMg" kind="presentation" id="ezw-xd-nr1"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -337,14 +344,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="MGd-iR-91m" firstAttribute="bottom" secondItem="pEd-mr-v6S" secondAttribute="bottom" id="8BD-vK-uKO"/>
+                            <constraint firstItem="MGd-iR-91m" firstAttribute="leading" secondItem="pEd-mr-v6S" secondAttribute="leading" id="I4m-N9-u0n"/>
+                            <constraint firstItem="MGd-iR-91m" firstAttribute="trailing" secondItem="pEd-mr-v6S" secondAttribute="trailing" id="d3e-KJ-4F3"/>
                             <constraint firstItem="O1A-fE-CT1" firstAttribute="centerY" secondItem="pEd-mr-v6S" secondAttribute="centerY" id="hnh-TY-U7j"/>
                             <constraint firstItem="O1A-fE-CT1" firstAttribute="centerX" secondItem="pEd-mr-v6S" secondAttribute="centerX" id="vZx-tG-RZi"/>
+                            <constraint firstItem="MGd-iR-91m" firstAttribute="top" secondItem="pEd-mr-v6S" secondAttribute="top" id="zDg-Pp-yxe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j8O-YL-rTd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RyS-lj-2Tl"/>
+                    <navigationItem key="navigationItem" title="Level Maker" id="RyS-lj-2Tl"/>
                     <connections>
                         <outlet property="addButton" destination="6wl-8F-vV5" id="0HI-H8-lii"/>
+                        <outlet property="bgImageView" destination="MGd-iR-91m" id="27W-0K-8i2"/>
                         <outlet property="outOfAreaLabel" destination="ntg-pf-ady" id="YuV-by-5r9"/>
                         <outlet property="playArea" destination="XZ6-nc-kdd" id="daP-pl-hpR"/>
                         <outlet property="removeButton" destination="Ic0-b7-FVN" id="vsw-0a-Qfb"/>
@@ -352,9 +364,117 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQQ-Kj-f0H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="467"/>
+            <point key="canvasLocation" x="1537.68115942029" y="466.74107142857139"/>
         </scene>
-        <!--Level Selection View Controller-->
+        <!--Image Picker View Controller-->
+        <scene sceneID="k7e-iC-KU2">
+            <objects>
+                <viewController id="0L2-Ck-eMg" customClass="ImagePickerViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rvM-pe-aVt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4AW-4m-BSz">
+                                <rect key="frame" x="5" y="5" width="404" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dvh-tR-2pT">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="DMR-df-5Ku">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="14V-vq-5zN">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="0L2-Ck-eMg" id="EXJ-yE-azf"/>
+                                    <outlet property="delegate" destination="0L2-Ck-eMg" id="98t-ZB-tcj"/>
+                                </connections>
+                            </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7j-Bk-ApQ">
+                                <rect key="frame" x="160.5" y="409" width="93.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rif-KT-zYb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lO0-ZB-Z2p">
+                                <rect key="frame" x="64.5" y="392.5" width="285.5" height="57"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qPV-7I-fg6">
+                                        <rect key="frame" x="10" y="10" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading large image..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2M-B0-K2i">
+                                        <rect key="frame" x="57" y="18" width="218.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <edgeInsets key="layoutMargins" top="10" left="10" bottom="10" right="10"/>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdJ-8e-5Kv">
+                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem enabled="NO" title="New Collection" id="HTz-Cs-ib7">
+                                        <connections>
+                                            <action selector="newCollectionBarButtonTapped:" destination="0L2-Ck-eMg" id="HU5-v7-4rl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Nge-XG-rJK"/>
+                                    <barButtonItem title="Cancel" id="SRa-dq-5Sf">
+                                        <connections>
+                                            <action selector="cancelBarButtonTapped:" destination="0L2-Ck-eMg" id="nOF-X1-P1E"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Rif-KT-zYb" firstAttribute="top" secondItem="rvM-pe-aVt" secondAttribute="top" id="05j-1q-IHP"/>
+                            <constraint firstItem="4AW-4m-BSz" firstAttribute="leading" secondItem="dTr-kE-2Uz" secondAttribute="leading" constant="5" id="MJh-z7-ho4"/>
+                            <constraint firstItem="UdJ-8e-5Kv" firstAttribute="bottom" secondItem="dTr-kE-2Uz" secondAttribute="bottom" id="MeR-4p-VDG"/>
+                            <constraint firstItem="4AW-4m-BSz" firstAttribute="bottom" secondItem="UdJ-8e-5Kv" secondAttribute="top" constant="-5" id="UBp-Pd-VR2"/>
+                            <constraint firstItem="UdJ-8e-5Kv" firstAttribute="trailing" secondItem="dTr-kE-2Uz" secondAttribute="trailing" id="WE0-bJ-OqO"/>
+                            <constraint firstItem="4AW-4m-BSz" firstAttribute="top" secondItem="dTr-kE-2Uz" secondAttribute="top" constant="5" id="adH-k0-OWi"/>
+                            <constraint firstItem="Rif-KT-zYb" firstAttribute="bottom" secondItem="UdJ-8e-5Kv" secondAttribute="top" id="cJ3-TE-aMW"/>
+                            <constraint firstItem="lO0-ZB-Z2p" firstAttribute="centerX" secondItem="rvM-pe-aVt" secondAttribute="centerX" id="irz-0V-fOM"/>
+                            <constraint firstItem="UdJ-8e-5Kv" firstAttribute="leading" secondItem="dTr-kE-2Uz" secondAttribute="leading" id="m2N-nS-07i"/>
+                            <constraint firstItem="4AW-4m-BSz" firstAttribute="trailing" secondItem="dTr-kE-2Uz" secondAttribute="trailing" constant="-5" id="mAQ-Gb-uzE"/>
+                            <constraint firstItem="Rif-KT-zYb" firstAttribute="trailing" secondItem="rvM-pe-aVt" secondAttribute="trailing" id="nAY-Qf-cCk"/>
+                            <constraint firstItem="V7j-Bk-ApQ" firstAttribute="centerX" secondItem="rvM-pe-aVt" secondAttribute="centerX" id="o9N-Od-KG9"/>
+                            <constraint firstItem="lO0-ZB-Z2p" firstAttribute="centerY" secondItem="rvM-pe-aVt" secondAttribute="centerY" id="scz-Tm-7Vr"/>
+                            <constraint firstItem="V7j-Bk-ApQ" firstAttribute="centerY" secondItem="rvM-pe-aVt" secondAttribute="centerY" id="y0r-dx-vq1"/>
+                            <constraint firstItem="Rif-KT-zYb" firstAttribute="leading" secondItem="rvM-pe-aVt" secondAttribute="leading" id="ykQ-hg-CNX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dTr-kE-2Uz"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="4AW-4m-BSz" id="8f7-lI-8w3"/>
+                        <outlet property="dimmer" destination="Rif-KT-zYb" id="18t-0G-zA5"/>
+                        <outlet property="downloadingIndicator" destination="lO0-ZB-Z2p" id="Pcc-uU-ysT"/>
+                        <outlet property="flowLayout" destination="Dvh-tR-2pT" id="5Mw-lW-xoc"/>
+                        <outlet property="newCollectionBarButton" destination="HTz-Cs-ib7" id="75r-iM-5jL"/>
+                        <outlet property="noImagesLabel" destination="V7j-Bk-ApQ" id="kUN-E2-eSu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9N-jt-4n9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2230.434782608696" y="466.74107142857139"/>
+        </scene>
+        <!--Pick a Level-->
         <scene sceneID="mXM-pi-sZV">
             <objects>
                 <tableViewController id="gBa-bd-RIA" customClass="LevelSelectionViewController" customModule="Debugger" customModuleProvider="target" sceneMemberID="viewController">
@@ -377,7 +497,7 @@
                             <outlet property="delegate" destination="gBa-bd-RIA" id="Xva-0z-MZX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fuF-Pi-MUK"/>
+                    <navigationItem key="navigationItem" title="Pick a Level" id="fuF-Pi-MUK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8b-pA-Zs2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -400,7 +520,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bug" width="50" height="50"/>
-        <image name="debugging" width="150" height="136"/>
+        <image name="Bug" width="50" height="50"/>
+        <image name="Debugging" width="150" height="136"/>
     </resources>
 </document>

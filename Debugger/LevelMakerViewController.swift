@@ -14,12 +14,16 @@ class LevelMakerViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var outOfAreaLabel: UILabel!
+    @IBOutlet weak var bgImageView: UIImageView!
+    
+    var dataController: DataController!
     
     let bugWidth: CGFloat = 50.0
     let bugHeight: CGFloat = 50.0
     let playAreaWidth: CGFloat = 300
     let playAreaHeight: CGFloat = 300
     
+    var bgImage: UIImage? = nil
     var isAddingBugs = true
     var bugs = [UIImageView]()
     
@@ -27,6 +31,10 @@ class LevelMakerViewController: UIViewController {
         super.viewDidLoad()
         setupPlayArea()
         switchToAddingBugs()
+    }
+    
+    func updateBGImage() {
+        bgImageView.image = bgImage
     }
     
     private func setupPlayArea() {
@@ -56,7 +64,7 @@ class LevelMakerViewController: UIViewController {
     
     private func createBug(x: CGFloat, y: CGFloat) -> UIImageView {
         let bug = UIImageView(frame: CGRect(x: x, y: y, width: bugWidth, height: bugHeight))
-        bug.image = UIImage(named: "bug")
+        bug.image = UIImage(named: "Bug")
         return bug
     }
     
@@ -104,6 +112,12 @@ class LevelMakerViewController: UIViewController {
         removeButton.backgroundColor = .systemGray5
         for bug in bugs {
             bug.isUserInteractionEnabled = true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ImagePickerViewController {
+            vc.dataController = dataController
         }
     }
     

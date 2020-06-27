@@ -10,4 +10,12 @@ import UIKit
 
 class LevelBrowserViewController: UIViewController {
     
+    var dataController: DataController!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? LevelMakerViewController {
+            vc.dataController = dataController
+        }
+    }
+    
 }

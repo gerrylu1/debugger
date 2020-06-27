@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EE3C5A6424A5350700E6454C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C5A6324A5350700E6454C /* AboutViewController.swift */; };
+		EE93A1DF24A708F60039559D /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93A1DE24A708F60039559D /* ImagePickerViewController.swift */; };
+		EE93A1E124A7097D0039559D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93A1E024A7097D0039559D /* UIViewController+Extensions.swift */; };
+		EE93A1E424A73BEE0039559D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93A1E224A73BEE0039559D /* ImageCell.swift */; };
+		EE93A1E524A73BEE0039559D /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE93A1E324A73BEE0039559D /* ImageCell.xib */; };
 		EEB8601624A1EBD100EBFDF9 /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601524A1EBD100EBFDF9 /* LevelSelectionViewController.swift */; };
 		EEB8601824A1EBF500EBFDF9 /* LevelMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */; };
 		EEB8601A24A1ED0E00EBFDF9 /* LevelBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8601924A1ED0E00EBFDF9 /* LevelBrowserViewController.swift */; };
@@ -21,10 +25,17 @@
 		EED6C59324A1E07A008CFBBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED6C59124A1E07A008CFBBD /* Main.storyboard */; };
 		EED6C59524A1E07B008CFBBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED6C59424A1E07B008CFBBD /* Assets.xcassets */; };
 		EED6C59824A1E07B008CFBBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED6C59624A1E07B008CFBBD /* LaunchScreen.storyboard */; };
+		EEF1FB8A24A60CD900B71771 /* PixabayClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FB8924A60CD900B71771 /* PixabayClient.swift */; };
+		EEF1FB8D24A60F0900B71771 /* ImageSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FB8C24A60F0900B71771 /* ImageSearchResponse.swift */; };
+		EEF1FB9124A6103500B71771 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FB9024A6103500B71771 /* ImageInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE3C5A6324A5350700E6454C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		EE93A1DE24A708F60039559D /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		EE93A1E024A7097D0039559D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		EE93A1E224A73BEE0039559D /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		EE93A1E324A73BEE0039559D /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		EEB8601524A1EBD100EBFDF9 /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
 		EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMakerViewController.swift; sourceTree = "<group>"; };
 		EEB8601924A1ED0E00EBFDF9 /* LevelBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBrowserViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +51,9 @@
 		EED6C59424A1E07B008CFBBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EED6C59724A1E07B008CFBBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EED6C59924A1E07B008CFBBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF1FB8924A60CD900B71771 /* PixabayClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayClient.swift; sourceTree = "<group>"; };
+		EEF1FB8C24A60F0900B71771 /* ImageSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchResponse.swift; sourceTree = "<group>"; };
+		EEF1FB9024A6103500B71771 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +74,12 @@
 				EED6C58D24A1E07A008CFBBD /* SceneDelegate.swift */,
 				EED6C58F24A1E07A008CFBBD /* WelcomeViewController.swift */,
 				EEB8601524A1EBD100EBFDF9 /* LevelSelectionViewController.swift */,
-				EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */,
 				EEB8601924A1ED0E00EBFDF9 /* LevelBrowserViewController.swift */,
+				EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */,
+				EE93A1DE24A708F60039559D /* ImagePickerViewController.swift */,
 				EEB8601B24A1ED6900EBFDF9 /* PlayerViewController.swift */,
 				EE3C5A6324A5350700E6454C /* AboutViewController.swift */,
+				EE93A1E024A7097D0039559D /* UIViewController+Extensions.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -73,6 +89,8 @@
 			children = (
 				EED6C59124A1E07A008CFBBD /* Main.storyboard */,
 				EED6C59624A1E07B008CFBBD /* LaunchScreen.storyboard */,
+				EE93A1E224A73BEE0039559D /* ImageCell.swift */,
+				EE93A1E324A73BEE0039559D /* ImageCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -81,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				EEB8602224A1FDE700EBFDF9 /* Secrets.swift */,
+				EEF1FB8824A60C8B00B71771 /* PixabayClient */,
+				EEF1FB8B24A60EC100B71771 /* PixabayResponse */,
 				EEB8601424A1E94C00EBFDF9 /* Data */,
 			);
 			name = Model;
@@ -121,6 +141,23 @@
 				EED6C59924A1E07B008CFBBD /* Info.plist */,
 			);
 			path = Debugger;
+			sourceTree = "<group>";
+		};
+		EEF1FB8824A60C8B00B71771 /* PixabayClient */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1FB8924A60CD900B71771 /* PixabayClient.swift */,
+			);
+			name = PixabayClient;
+			sourceTree = "<group>";
+		};
+		EEF1FB8B24A60EC100B71771 /* PixabayResponse */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1FB8C24A60F0900B71771 /* ImageSearchResponse.swift */,
+				EEF1FB9024A6103500B71771 /* ImageInfo.swift */,
+			);
+			name = PixabayResponse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EED6C59824A1E07B008CFBBD /* LaunchScreen.storyboard in Resources */,
+				EE93A1E524A73BEE0039559D /* ImageCell.xib in Resources */,
 				EED6C59524A1E07B008CFBBD /* Assets.xcassets in Resources */,
 				EED6C59324A1E07A008CFBBD /* Main.storyboard in Resources */,
 			);
@@ -194,17 +232,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF1FB9124A6103500B71771 /* ImageInfo.swift in Sources */,
+				EEF1FB8D24A60F0900B71771 /* ImageSearchResponse.swift in Sources */,
 				EEB8601824A1EBF500EBFDF9 /* LevelMakerViewController.swift in Sources */,
 				EEB8602324A1FDE700EBFDF9 /* Secrets.swift in Sources */,
 				EE3C5A6424A5350700E6454C /* AboutViewController.swift in Sources */,
 				EED6C59024A1E07A008CFBBD /* WelcomeViewController.swift in Sources */,
+				EE93A1E424A73BEE0039559D /* ImageCell.swift in Sources */,
+				EE93A1DF24A708F60039559D /* ImagePickerViewController.swift in Sources */,
 				EEB8601F24A1EE8E00EBFDF9 /* Debugger.xcdatamodeld in Sources */,
 				EEB8601A24A1ED0E00EBFDF9 /* LevelBrowserViewController.swift in Sources */,
 				EEB8602124A1F57200EBFDF9 /* DataController.swift in Sources */,
 				EEB8601C24A1ED6900EBFDF9 /* PlayerViewController.swift in Sources */,
 				EED6C58C24A1E07A008CFBBD /* AppDelegate.swift in Sources */,
+				EE93A1E124A7097D0039559D /* UIViewController+Extensions.swift in Sources */,
 				EEB8601624A1EBD100EBFDF9 /* LevelSelectionViewController.swift in Sources */,
 				EED6C58E24A1E07A008CFBBD /* SceneDelegate.swift in Sources */,
+				EEF1FB8A24A60CD900B71771 /* PixabayClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

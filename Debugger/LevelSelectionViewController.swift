@@ -32,7 +32,7 @@ class LevelSelectionViewController: UITableViewController {
         let fetchRequest: NSFetchRequest<Level> = Level.fetchRequest()
         let sortById = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortById]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "levels")
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         do {
             try fetchedResultsController.performFetch()

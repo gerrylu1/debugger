@@ -29,9 +29,11 @@ class LevelBrowserViewController: UIViewController {
     
     private func setupFetchedResultsController() {
         let fetchRequest: NSFetchRequest<Level> = Level.fetchRequest()
+        let predicate = NSPredicate(format: "isCustom == YES")
+        fetchRequest.predicate = predicate
         let sortById = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortById]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "levels")
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         do {
             try fetchedResultsController.performFetch()

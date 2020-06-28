@@ -10,4 +10,7 @@ import UIKit
 
 class PlayerViewController: UIViewController {
     
+    var dataController: DataController!
+    var level: Level!
+    
 }

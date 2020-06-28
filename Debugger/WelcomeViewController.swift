@@ -19,6 +19,9 @@ class WelcomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? LevelSelectionViewController {
+            vc.dataController = dataController
+        }
         if let vc = segue.destination as? LevelBrowserViewController {
             vc.dataController = dataController
         }

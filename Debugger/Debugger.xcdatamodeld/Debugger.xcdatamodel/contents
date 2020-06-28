@@ -8,8 +8,8 @@
         <attribute name="webformatURL" attributeType="String"/>
     </entity>
     <entity name="Bug" representedClassName="Bug" syncable="YES" codeGenerationType="class">
-        <attribute name="xLocation" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="yLocation" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="xLocation" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="yLocation" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="level" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Level" inverseName="bugs" inverseEntity="Level"/>
     </entity>
     <entity name="Level" representedClassName="Level" syncable="YES" codeGenerationType="class">

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class LevelMakerViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var playArea: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
@@ -19,10 +21,14 @@ class LevelMakerViewController: UIViewController {
     
     var dataController: DataController!
     
+    // config UI elements
     let bugWidth: CGFloat = 50.0
     let bugHeight: CGFloat = 50.0
     let playAreaWidth: CGFloat = 300
     let playAreaHeight: CGFloat = 300
+    
+    // set the compression quality for converting downloaded images to data for storing
+    let compressionQuality: CGFloat = 0.7
     
     var bgImage: UIImage? = nil
     var isAddingBugs = true
@@ -112,6 +118,17 @@ class LevelMakerViewController: UIViewController {
         switchToRemovingBugs()
     }
     
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        if nameTextField.text == "" {
+            showAlert(title: "Name Required", message: "Please enter a name for this level. You can enter a space if you don't want to name it.", on: self)
+        } else if bugs.isEmpty {
+            showAlert(title: "No Bugs Added", message: "Please add a bug at least in the play area.", on: self)
+        } else {
+            saveLevel()
+        }
+        
+    }
+    
     private func switchToAddingBugs() {
         isAddingBugs = true
         addButton.backgroundColor = .systemGray5
@@ -127,6 +144,37 @@ class LevelMakerViewController: UIViewController {
         removeButton.backgroundColor = .systemGray5
         for bug in bugs {
             bug.isUserInteractionEnabled = true
+        }
+    }
+    
+    private func saveLevel() {
+        var levelsCount = 0
+        let fetchRequest: NSFetchRequest<Level> = Level.fetchRequest()
+        do {
+            let result = try dataController.viewContext.fetch(fetchRequest)
+            let levels = result
+            levelsCount = levels.count
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
+        let newLevel = Level(context: dataController.viewContext)
+        newLevel.id = Int64(levelsCount + 1)
+        newLevel.isCustom = true
+        newLevel.name = nameTextField.text
+        if let bgImage = bgImage {
+            newLevel.bgImage = bgImage.jpegData(compressionQuality: compressionQuality)
+        }
+        for bug in bugs {
+            let newBug = Bug(context: dataController.viewContext)
+            newBug.xLocation = Double(bug.frame.origin.x)
+            newBug.yLocation = Double(bug.frame.origin.y)
+            newBug.level = newLevel
+        }
+        do {
+            try dataController.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            showAlert(title: "Failed to Save Level", message: error.localizedDescription, on: self)
         }
     }
     

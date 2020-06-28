@@ -201,8 +201,8 @@
                                             <segue destination="ppW-79-4Tc" kind="show" id="gAj-bq-Wtv"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or, remove existing levels." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toi-zG-xeA">
-                                        <rect key="frame" x="0.0" y="96.5" width="199.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or, swipe left to remove a existing level." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toi-zG-xeA">
+                                        <rect key="frame" x="0.0" y="96.5" width="301.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -211,7 +211,7 @@
                                         <rect key="frame" x="0.0" y="137" width="374" height="577"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BTF-zZ-erA">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LevelCell" id="BTF-zZ-erA">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BTF-zZ-erA" id="YH4-cK-3oD">
@@ -220,6 +220,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="DIS-pL-0po" id="Uaa-u7-9cM"/>
+                                            <outlet property="delegate" destination="DIS-pL-0po" id="64h-DI-ovs"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -238,6 +242,9 @@
                         <viewLayoutGuide key="safeArea" id="LSM-R4-vxQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Level Maker" id="T9t-qQ-PPA"/>
+                    <connections>
+                        <outlet property="tableView" destination="d09-Gs-9ku" id="aEX-Df-57c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhT-Qh-Nu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

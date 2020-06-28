@@ -14,6 +14,7 @@ class LevelMakerViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var outOfAreaLabel: UILabel!
+    @IBOutlet weak var controls: UIStackView!
     @IBOutlet weak var bgImageView: UIImageView!
     
     var dataController: DataController!
@@ -29,6 +30,7 @@ class LevelMakerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackgroundForControls()
         setupPlayArea()
         switchToAddingBugs()
     }
@@ -41,6 +43,19 @@ class LevelMakerViewController: UIViewController {
         playArea.layer.borderColor = UIColor.black.cgColor
         playArea.layer.borderWidth = 1
         playArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.addBug(_:))))
+    }
+    
+    private func setupBackgroundForControls() {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.white
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.bounds = controls.bounds
+        blurEffectView.frame.origin = CGPoint(x: 0, y: 0)
+        
+        controls.insertSubview(blurEffectView, at: 0)
     }
     
     @objc private func addBug(_ gestureRecognizer: UIGestureRecognizer) {

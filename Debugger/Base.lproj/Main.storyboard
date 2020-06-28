@@ -255,10 +255,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="O1A-fE-CT1">
-                                <rect key="frame" x="57" y="182" width="300" height="532"/>
+                                <rect key="frame" x="41" y="166" width="332" height="564"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6hB-ME-07h">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
+                                        <rect key="frame" x="16" y="16" width="300" height="84"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Mu-2p-L8v">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
@@ -297,7 +297,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sjR-b7-J6k">
-                                        <rect key="frame" x="0.0" y="144" width="300" height="388"/>
+                                        <rect key="frame" x="16" y="160" width="300" height="388"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1LD-YA-Bdh">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -340,6 +340,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -357,6 +358,7 @@
                     <connections>
                         <outlet property="addButton" destination="6wl-8F-vV5" id="0HI-H8-lii"/>
                         <outlet property="bgImageView" destination="MGd-iR-91m" id="27W-0K-8i2"/>
+                        <outlet property="controls" destination="O1A-fE-CT1" id="4lQ-p9-ZOZ"/>
                         <outlet property="outOfAreaLabel" destination="ntg-pf-ady" id="YuV-by-5r9"/>
                         <outlet property="playArea" destination="XZ6-nc-kdd" id="daP-pl-hpR"/>
                         <outlet property="removeButton" destination="Ic0-b7-FVN" id="vsw-0a-Qfb"/>

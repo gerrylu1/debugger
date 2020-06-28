@@ -21,6 +21,7 @@ class ImagePickerViewController: UIViewController {
     var dataController: DataController!
     var fetchedResultsController: NSFetchedResultsController<BGImage>!
     var currentSessionTask: URLSessionTask?
+    var downloadsFinished = false
     
     // set the number of photos to download if available for each collection
     let perPage = 30
@@ -51,7 +52,7 @@ class ImagePickerViewController: UIViewController {
         registerCollectionViewCells()
         flowLayoutAdjustment(width: collectionView.frame.size.width)
         checkStoredImages()
-        setupdownloadingIndicator()
+        setupBackgroundForDownloadingIndicator()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -87,7 +88,7 @@ class ImagePickerViewController: UIViewController {
         }
     }
     
-    private func setupdownloadingIndicator() {
+    private func setupBackgroundForDownloadingIndicator() {
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.white
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -129,13 +130,19 @@ class ImagePickerViewController: UIViewController {
                         }
                         imagesToBeDownloaded -= 1
                         if imagesToBeDownloaded == 0 {
-                            self.newCollectionBarButton.isEnabled = true
+                            self.downloadsFinished = true
+                            if self.dimmer.isHidden {
+                                self.newCollectionBarButton.isEnabled = true
+                            }
                         }
                     }
                 }
             }
             if imagesInStorage == imagesToBeDisplayed {
-                newCollectionBarButton.isEnabled = true
+                downloadsFinished = true
+                if dimmer.isHidden {
+                    newCollectionBarButton.isEnabled = true
+                }
             }
         } else {
             getImageCollection()
@@ -225,7 +232,7 @@ extension ImagePickerViewController: UICollectionViewDataSource, UICollectionVie
                 guard let image = image else {
                     self.dimmer.isHidden = true
                     self.downloadingIndicator.isHidden = true
-                    self.newCollectionBarButton.isEnabled = true
+                    self.newCollectionBarButton.isEnabled = self.downloadsFinished
                     self.showAlert(title: "Download Failed", message: error?.localizedDescription, on: self)
                     return
                 }
@@ -235,7 +242,7 @@ extension ImagePickerViewController: UICollectionViewDataSource, UICollectionVie
                 self.dismiss(animated: true, completion: nil)
             }
         } else {
-            showAlert(title: "Download Not Finished", message: "This image is still being downloaded. Please try again later.", on: self)
+            showAlert(title: "Image Not Loaded", message: "This image is still being downloaded. Please try again later.", on: self)
         }
     }
     

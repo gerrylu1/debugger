@@ -151,12 +151,16 @@ class PlayerViewController: UIViewController {
     @objc private func removeBug(_ gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer.state == .began {
             startTimerOnce()
-            let bug = gestureRecognizer.view as! UIImageView
-            bug.removeFromSuperview()
             kills += 1
             killedLabel.text = String("Killed: \(kills)")
             if kills == bugs.count {
                 levelCleared()
+            }
+            let bugView = gestureRecognizer.view as! UIImageView
+            bugView.image = UIImage(named: "BugSquashed")
+            bugView.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.5) {
+                bugView.alpha = 0
             }
         }
     }

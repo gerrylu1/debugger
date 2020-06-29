@@ -35,7 +35,7 @@ class LevelMakerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackgroundForControls()
+        setupBlurEffectForControls()
         setupPlayArea()
         switchToAddingBugs()
     }
@@ -50,16 +50,11 @@ class LevelMakerViewController: UIViewController {
         playArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.addBug(_:))))
     }
     
-    private func setupBackgroundForControls() {
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.white
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        
+    private func setupBlurEffectForControls() {
         let blurEffect = UIBlurEffect(style: .extraLight)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.bounds = controls.bounds
         blurEffectView.frame.origin = CGPoint(x: 0, y: 0)
-        
         controls.insertSubview(blurEffectView, at: 0)
     }
     

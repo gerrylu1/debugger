@@ -19,10 +19,19 @@
         <attribute name="isCustom" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="bugs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bug" inverseName="level" inverseEntity="Bug"/>
+        <relationship name="stats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stat" inverseName="level" inverseEntity="Stat"/>
+    </entity>
+    <entity name="Stat" representedClassName="Stat" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="kills" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="misses" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="level" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="stats" inverseEntity="Level"/>
     </entity>
     <elements>
-        <element name="BGImage" positionX="45" positionY="27" width="128" height="118"/>
+        <element name="BGImage" positionX="-80.3046875" positionY="-199.25390625" width="128" height="118"/>
         <element name="Bug" positionX="155.77734375" positionY="9.03125" width="128" height="103"/>
-        <element name="Level" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Level" positionX="-82.68359375" positionY="-29.2421875" width="128" height="133"/>
+        <element name="Stat" positionX="-276.21875" positionY="21.80078125" width="128" height="118"/>
     </elements>
 </model>

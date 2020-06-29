@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE3C5A6424A5350700E6454C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C5A6324A5350700E6454C /* AboutViewController.swift */; };
+		EE5FEAA324AA04E800714E0B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5FEAA224AA04E800714E0B /* StatsViewController.swift */; };
 		EE93A1DF24A708F60039559D /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93A1DE24A708F60039559D /* ImagePickerViewController.swift */; };
 		EE93A1E124A7097D0039559D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93A1E024A7097D0039559D /* UIViewController+Extensions.swift */; };
 		EE93A1E424A73BEE0039559D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93A1E224A73BEE0039559D /* ImageCell.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		EE3C5A6324A5350700E6454C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		EE5FEAA224AA04E800714E0B /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		EE93A1DE24A708F60039559D /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		EE93A1E024A7097D0039559D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		EE93A1E224A73BEE0039559D /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				EEB8601724A1EBF500EBFDF9 /* LevelMakerViewController.swift */,
 				EE93A1DE24A708F60039559D /* ImagePickerViewController.swift */,
 				EEB8601B24A1ED6900EBFDF9 /* PlayerViewController.swift */,
+				EE5FEAA224AA04E800714E0B /* StatsViewController.swift */,
 				EE3C5A6324A5350700E6454C /* AboutViewController.swift */,
 				EE93A1E024A7097D0039559D /* UIViewController+Extensions.swift */,
 			);
@@ -248,6 +251,7 @@
 				EE93A1E124A7097D0039559D /* UIViewController+Extensions.swift in Sources */,
 				EEB8601624A1EBD100EBFDF9 /* LevelSelectionViewController.swift in Sources */,
 				EED6C58E24A1E07A008CFBBD /* SceneDelegate.swift in Sources */,
+				EE5FEAA324AA04E800714E0B /* StatsViewController.swift in Sources */,
 				EEF1FB8A24A60CD900B71771 /* PixabayClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

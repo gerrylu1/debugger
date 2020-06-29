@@ -25,6 +25,9 @@ class WelcomeViewController: UIViewController {
         if let vc = segue.destination as? LevelBrowserViewController {
             vc.dataController = dataController
         }
+        if let vc = segue.destination as? StatsViewController {
+            vc.dataController = dataController
+        }
     }
     
 }

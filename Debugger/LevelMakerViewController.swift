@@ -158,17 +158,8 @@ class LevelMakerViewController: UIViewController {
     }
     
     private func saveLevel() {
-        var levelsCount = 0
-        let fetchRequest: NSFetchRequest<Level> = Level.fetchRequest()
-        do {
-            let result = try dataController.viewContext.fetch(fetchRequest)
-            let levels = result
-            levelsCount = levels.count
-        } catch {
-            fatalError("The fetch could not be performed: \(error.localizedDescription)")
-        }
         let newLevel = Level(context: dataController.viewContext)
-        newLevel.id = Int64(levelsCount + 1)
+        newLevel.dateCreated = Date()
         newLevel.isCustom = true
         newLevel.name = nameTextField.text
         if let bgImage = bgImage {

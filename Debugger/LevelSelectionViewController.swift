@@ -30,8 +30,8 @@ class LevelSelectionViewController: UITableViewController {
     
     private func setupFetchedResultsController() {
         let fetchRequest: NSFetchRequest<Level> = Level.fetchRequest()
-        let sortById = NSSortDescriptor(key: "id", ascending: true)
-        fetchRequest.sortDescriptors = [sortById]
+        let sortByDate = NSSortDescriptor(key: "dateCreated", ascending: true)
+        fetchRequest.sortDescriptors = [sortByDate]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         do {

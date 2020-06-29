@@ -15,7 +15,7 @@
     </entity>
     <entity name="Level" representedClassName="Level" syncable="YES" codeGenerationType="class">
         <attribute name="bgImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isCustom" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="bugs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bug" inverseName="level" inverseEntity="Bug"/>

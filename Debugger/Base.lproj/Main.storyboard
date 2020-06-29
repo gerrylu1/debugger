@@ -262,10 +262,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="O1A-fE-CT1">
-                                <rect key="frame" x="41" y="166" width="332" height="564"/>
+                                <rect key="frame" x="41" y="141" width="332" height="614"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6hB-ME-07h">
-                                        <rect key="frame" x="16" y="16" width="300" height="84"/>
+                                        <rect key="frame" x="16" y="16" width="300" height="134"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Mu-2p-L8v">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
@@ -301,10 +301,34 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tR8-iQ-PPS">
+                                                <rect key="frame" x="0.0" y="104" width="300" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bug Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NML-qs-XZp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="25" maxValue="100" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBG-j7-avi">
+                                                        <rect key="frame" x="75" y="0.0" width="139" height="31"/>
+                                                        <connections>
+                                                            <action selector="bugSizeChanged:" destination="ppW-79-4Tc" eventType="valueChanged" id="ol4-qI-TWq"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrC-sb-oZW">
+                                                        <rect key="frame" x="222" y="0.0" width="78" height="30"/>
+                                                        <state key="normal" title="Apply to All"/>
+                                                        <connections>
+                                                            <action selector="applyToAllButtonTapped:" destination="ppW-79-4Tc" eventType="touchUpInside" id="lwb-Vv-G5c"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sjR-b7-J6k">
-                                        <rect key="frame" x="16" y="160" width="300" height="388"/>
+                                        <rect key="frame" x="16" y="210" width="300" height="388"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1LD-YA-Bdh">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -368,6 +392,7 @@
                     <connections>
                         <outlet property="addButton" destination="6wl-8F-vV5" id="0HI-H8-lii"/>
                         <outlet property="bgImageView" destination="MGd-iR-91m" id="27W-0K-8i2"/>
+                        <outlet property="bugSizeSlider" destination="UBG-j7-avi" id="K6V-lP-qAH"/>
                         <outlet property="controls" destination="O1A-fE-CT1" id="4lQ-p9-ZOZ"/>
                         <outlet property="nameTextField" destination="L5T-ku-Uc4" id="EOD-o1-k8Q"/>
                         <outlet property="outOfAreaLabel" destination="ntg-pf-ady" id="YuV-by-5r9"/>
@@ -553,7 +578,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bug" width="50" height="50"/>
+        <image name="Bug" width="100" height="100"/>
         <image name="Debugging" width="150" height="136"/>
     </resources>
 </document>

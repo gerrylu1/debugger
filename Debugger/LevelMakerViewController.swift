@@ -12,6 +12,7 @@ import CoreData
 class LevelMakerViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var bugSizeSlider: UISlider!
     @IBOutlet weak var playArea: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
@@ -22,10 +23,8 @@ class LevelMakerViewController: UIViewController {
     var dataController: DataController!
     
     // config UI elements
-    let bugWidth: CGFloat = 50.0
-    let bugHeight: CGFloat = 50.0
-    let playAreaWidth: CGFloat = 300
-    let playAreaHeight: CGFloat = 300
+    var bugSize: CGFloat = 50.0
+    let playAreaSize: CGFloat = 300
     
     // set the compression quality for converting downloaded images to data for storing
     let compressionQuality: CGFloat = 0.7
@@ -67,9 +66,9 @@ class LevelMakerViewController: UIViewController {
     @objc private func addBug(_ gestureRecognizer: UIGestureRecognizer) {
         if isAddingBugs {
             let location = gestureRecognizer.location(in: playArea)
-            let x = location.x - bugWidth / 2
-            let y = location.y - bugHeight / 2
-            if x > 0 && x < playAreaWidth - bugWidth && y > 0 && y < playAreaHeight - bugHeight {
+            let x = location.x - bugSize / 2
+            let y = location.y - bugSize / 2
+            if x >= 0 && x <= playAreaSize - bugSize && y >= 0 && y <= playAreaSize - bugSize {
                 let bug = createBug(x: x, y: y)
                 bug.isUserInteractionEnabled = false
                 bug.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.removeBug(_:))))
@@ -84,7 +83,7 @@ class LevelMakerViewController: UIViewController {
     }
     
     private func createBug(x: CGFloat, y: CGFloat) -> UIImageView {
-        let bug = UIImageView(frame: CGRect(x: x, y: y, width: bugWidth, height: bugHeight))
+        let bug = UIImageView(frame: CGRect(x: x, y: y, width: bugSize, height: bugSize))
         bug.image = UIImage(named: "Bug")
         return bug
     }
@@ -107,6 +106,22 @@ class LevelMakerViewController: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.outOfAreaLabel.alpha = 0
             }
+        }
+    }
+    
+    @IBAction func bugSizeChanged(_ sender: Any) {
+        bugSize = CGFloat(bugSizeSlider.value)
+    }
+    
+    @IBAction func applyToAllButtonTapped(_ sender: Any) {
+        for bug in bugs {
+            if bug.frame.origin.x + bugSize > playAreaSize {
+                bug.frame.origin.x = playAreaSize - bugSize
+            }
+            if bug.frame.origin.y + bugSize > playAreaSize {
+                bug.frame.origin.y = playAreaSize - bugSize
+            }
+            bug.frame.size = CGSize(width: bugSize, height: bugSize)
         }
     }
     
@@ -168,6 +183,7 @@ class LevelMakerViewController: UIViewController {
             let newBug = Bug(context: dataController.viewContext)
             newBug.xLocation = Double(bug.frame.origin.x)
             newBug.yLocation = Double(bug.frame.origin.y)
+            newBug.size = Double(bug.frame.size.width)
             newBug.level = newLevel
         }
         do {

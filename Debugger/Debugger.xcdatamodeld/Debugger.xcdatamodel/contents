@@ -11,15 +11,15 @@
         <attribute name="size" attributeType="Double" defaultValueString="50" usesScalarValueType="YES"/>
         <attribute name="xLocation" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="yLocation" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="level" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Level" inverseName="bugs" inverseEntity="Level"/>
+        <relationship name="level" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="bugs" inverseEntity="Level"/>
     </entity>
     <entity name="Level" representedClassName="Level" syncable="YES" codeGenerationType="class">
         <attribute name="bgImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="dateCreated" attributeType="Date"/>
         <attribute name="isCustom" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="bugs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bug" inverseName="level" inverseEntity="Bug"/>
-        <relationship name="stats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stat" inverseName="level" inverseEntity="Stat"/>
+        <relationship name="bugs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bug" inverseName="level" inverseEntity="Bug"/>
+        <relationship name="stats" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Stat" inverseName="level" inverseEntity="Stat"/>
     </entity>
     <entity name="Stat" representedClassName="Stat" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>

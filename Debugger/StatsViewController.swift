@@ -46,7 +46,7 @@ class StatsViewController: UITableViewController {
                 name += " (Default)"
             }
         }
-        let details = String(format: "Killed: %d | Missed: %d | Total Time: %.2f sec", object.kills, object.misses, object.totalTime)
+        let details = String(format: "Killed: %d | Missed: %d | Total Time Spent: %.2f sec", object.kills, object.misses, object.totalTime)
         cell.textLabel?.text = name
         cell.detailTextLabel?.text = details
         return cell

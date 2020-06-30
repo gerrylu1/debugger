@@ -44,6 +44,18 @@ class LevelMakerViewController: UIViewController {
         switchToAddingBugs()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !UserDefaults.standard.bool(forKey: AppDelegate.keyForHasDisplayedTipForLevelMaker) {
+            UserDefaults.standard.set(true, forKey: AppDelegate.keyForHasDisplayedTipForLevelMaker)
+            displayTip()
+        }
+    }
+    
+    private func displayTip() {
+        showAlert(title: "Tip", message: "Tap on the area to add bugs. If you want to remove bugs, select \"Remove\" first, then tap on any bugs that you want to remove. You can switch between \"Add\" and \"Remove\". \"Add\" is selected by default every time you open level maker. When you are finished, tap \"Save\" to save the level.", on: self)
+    }
+    
     func updateBGImage() {
         bgImageView.image = bgImage
     }

@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Properties
     static let keyForHasLaunchedBefore = "hasLaunchedBefore"
     static let keyForHasInitDefaultLevels = "hasInitDefaultLevels"
-    static let keyForHasReadTipForLevelMaker = "hasReadTipForLevelMaker"
+    static let keyForHasDisplayedTipForPlayer = "hasDisplayedTipForPlayer"
+    static let keyForHasDisplayedTipForLevelMaker = "hasDisplayedTipForLevelMaker"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,7 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaults.standard.bool(forKey: AppDelegate.keyForHasLaunchedBefore) {
             UserDefaults.standard.set(true, forKey: AppDelegate.keyForHasLaunchedBefore)
             UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasInitDefaultLevels)
-            UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasReadTipForLevelMaker)
+            UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasDisplayedTipForPlayer)
+            UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasDisplayedTipForLevelMaker)
         }
     }
     

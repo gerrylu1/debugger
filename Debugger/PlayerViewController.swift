@@ -41,9 +41,21 @@ class PlayerViewController: UIViewController {
         fetchBugs()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !UserDefaults.standard.bool(forKey: AppDelegate.keyForHasDisplayedTipForPlayer) {
+            UserDefaults.standard.set(true, forKey: AppDelegate.keyForHasDisplayedTipForPlayer)
+            displayTip()
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func displayTip() {
+        showAlert(title: "Tip", message: "Tap on a bug to kill it. If you tap on an empty space, it will count as missed. The objective is to eliminate all bugs as quickly as possible. The timer will start once you tap on a bug or an empty space.", on: self)
     }
     
     private func setupPlayArea() {

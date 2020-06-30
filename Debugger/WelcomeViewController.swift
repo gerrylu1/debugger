@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        playStartSound()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,6 +28,10 @@ class WelcomeViewController: UIViewController {
         if let vc = segue.destination as? StatsViewController {
             vc.dataController = dataController
         }
+    }
+    
+    private func playStartSound() {
+        Sound.play(file: "start.mp3")
     }
     
 }

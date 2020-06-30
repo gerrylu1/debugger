@@ -146,6 +146,7 @@ class PlayerViewController: UIViewController {
         closeButton.setTitle("Finish", for: .normal)
         stopTimer()
         saveResult()
+        Sound.play(file: "finish.mp3")
     }
     
     @objc private func removeBug(_ gestureRecognizer: UIGestureRecognizer) {
@@ -162,6 +163,7 @@ class PlayerViewController: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 bugView.alpha = 0
             }
+            Sound.play(file: "squashed.mp3")
         }
     }
     
@@ -170,6 +172,7 @@ class PlayerViewController: UIViewController {
             startTimerOnce()
             misses += 1
             missedLabel.text = String("Missed: \(misses)")
+            Sound.play(file: "missed.mp3")
         }
     }
     

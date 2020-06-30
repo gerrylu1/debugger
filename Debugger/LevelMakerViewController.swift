@@ -37,6 +37,7 @@ class LevelMakerViewController: UIViewController {
         super.viewDidLoad()
         setupBlurEffectForControls()
         setupPlayArea()
+        setupTextField()
         switchToAddingBugs()
     }
     
@@ -55,7 +56,13 @@ class LevelMakerViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.bounds = controls.bounds
         blurEffectView.frame.origin = CGPoint(x: 0, y: 0)
+        blurEffectView.clipsToBounds = true
+        blurEffectView.layer.cornerRadius = 15
         controls.insertSubview(blurEffectView, at: 0)
+    }
+    
+    private func setupTextField() {
+        nameTextField.delegate = self
     }
     
     @objc private func addBug(_ gestureRecognizer: UIGestureRecognizer) {
@@ -141,7 +148,7 @@ class LevelMakerViewController: UIViewController {
     
     private func switchToAddingBugs() {
         isAddingBugs = true
-        addButton.backgroundColor = .systemGray5
+        addButton.backgroundColor = .systemGray4
         removeButton.backgroundColor = .clear
         for bug in bugs {
             bug.isUserInteractionEnabled = false
@@ -151,7 +158,7 @@ class LevelMakerViewController: UIViewController {
     private func switchToRemovingBugs() {
         isAddingBugs = false
         addButton.backgroundColor = .clear
-        removeButton.backgroundColor = .systemGray5
+        removeButton.backgroundColor = .systemGray4
         for bug in bugs {
             bug.isUserInteractionEnabled = true
         }
@@ -184,6 +191,15 @@ class LevelMakerViewController: UIViewController {
         if let vc = segue.destination as? ImagePickerViewController {
             vc.dataController = dataController
         }
+    }
+    
+}
+
+extension LevelMakerViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

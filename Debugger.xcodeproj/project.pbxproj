@@ -86,6 +86,7 @@
 		EEB8601124A1E8F100EBFDF9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EEE5FBC824AB4BDD00F8A3A3 /* Library */,
 				EED6C58B24A1E07A008CFBBD /* AppDelegate.swift */,
 				EED6C58D24A1E07A008CFBBD /* SceneDelegate.swift */,
 				EEEAB44C24AB284B00FFD500 /* AppInitializer.swift */,
@@ -98,7 +99,6 @@
 				EE5FEAA224AA04E800714E0B /* StatsViewController.swift */,
 				EE3C5A6324A5350700E6454C /* AboutViewController.swift */,
 				EE93A1E024A7097D0039559D /* UIViewController+Extensions.swift */,
-				EEEAB44624AB1E7D00FFD500 /* Sound.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -162,6 +162,14 @@
 				EED6C59924A1E07B008CFBBD /* Info.plist */,
 			);
 			path = Debugger;
+			sourceTree = "<group>";
+		};
+		EEE5FBC824AB4BDD00F8A3A3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EEEAB44624AB1E7D00FFD500 /* Sound.swift */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		EEEAB44124AB1AD000FFD500 /* SoundEffects */ = {

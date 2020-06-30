@@ -69,7 +69,10 @@ extension LevelBrowserViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
-        case .delete: deleteLevel(at: indexPath)
+        case .delete:
+            showAlertOnDelete(title: "Delete \(fetchedResultsController.object(at: indexPath).name ?? "This Level")", message: "Are you sure you want to delete this level?", on: self) {
+                self.deleteLevel(at: indexPath)
+            }
         default: () // Unsupported
         }
     }

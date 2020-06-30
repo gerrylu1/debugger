@@ -26,6 +26,9 @@ class LevelMakerViewController: UIViewController {
     var bugSize: CGFloat = 50.0
     let playAreaSize: CGFloat = 300
     
+    // set the maximum number of bugs allowed for each level
+    let maxBugs = 10000
+    
     // set the compression quality for converting downloaded images to data for storing
     let compressionQuality: CGFloat = 0.7
     
@@ -67,19 +70,23 @@ class LevelMakerViewController: UIViewController {
     
     @objc private func addBug(_ gestureRecognizer: UIGestureRecognizer) {
         if isAddingBugs {
-            let location = gestureRecognizer.location(in: playArea)
-            let x = location.x - bugSize / 2
-            let y = location.y - bugSize / 2
-            if x >= 0 && x <= playAreaSize - bugSize && y >= 0 && y <= playAreaSize - bugSize {
-                let bug = createBug(x: x, y: y)
-                bug.isUserInteractionEnabled = false
-                bug.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.removeBug(_:))))
-                bugs.append(bug)
-                playArea.addSubview(bug)
-            } else {
-                if outOfAreaLabel.alpha == 0 {
-                    showOutOfPlayArea()
+            if bugs.count < maxBugs {
+                let location = gestureRecognizer.location(in: playArea)
+                let x = location.x - bugSize / 2
+                let y = location.y - bugSize / 2
+                if x >= 0 && x <= playAreaSize - bugSize && y >= 0 && y <= playAreaSize - bugSize {
+                    let bug = createBug(x: x, y: y)
+                    bug.isUserInteractionEnabled = false
+                    bug.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.removeBug(_:))))
+                    bugs.append(bug)
+                    playArea.addSubview(bug)
+                } else {
+                    if outOfAreaLabel.alpha == 0 {
+                        showOutOfPlayArea()
+                    }
                 }
+            } else {
+                showAlert(title: "Limit Reached", message: "The maximum number of bugs allowed for each level is \(maxBugs).", on: self)
             }
         }
     }

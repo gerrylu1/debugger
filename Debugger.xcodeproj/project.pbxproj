@@ -31,6 +31,8 @@
 		EEEAB44724AB1E7D00FFD500 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAB44624AB1E7D00FFD500 /* Sound.swift */; };
 		EEEAB44924AB247800FFD500 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EEEAB44824AB247800FFD500 /* start.mp3 */; };
 		EEEAB44B24AB269700FFD500 /* finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EEEAB44A24AB269700FFD500 /* finish.mp3 */; };
+		EEEAB44D24AB284B00FFD500 /* AppInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAB44C24AB284B00FFD500 /* AppInitializer.swift */; };
+		EEEAB44F24AB29C600FFD500 /* DefaultLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAB44E24AB29C600FFD500 /* DefaultLevels.swift */; };
 		EEF1FB8A24A60CD900B71771 /* PixabayClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FB8924A60CD900B71771 /* PixabayClient.swift */; };
 		EEF1FB8D24A60F0900B71771 /* ImageSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FB8C24A60F0900B71771 /* ImageSearchResponse.swift */; };
 		EEF1FB9124A6103500B71771 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FB9024A6103500B71771 /* ImageInfo.swift */; };
@@ -63,6 +65,8 @@
 		EEEAB44624AB1E7D00FFD500 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		EEEAB44824AB247800FFD500 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		EEEAB44A24AB269700FFD500 /* finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = finish.mp3; sourceTree = "<group>"; };
+		EEEAB44C24AB284B00FFD500 /* AppInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitializer.swift; sourceTree = "<group>"; };
+		EEEAB44E24AB29C600FFD500 /* DefaultLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLevels.swift; sourceTree = "<group>"; };
 		EEF1FB8924A60CD900B71771 /* PixabayClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayClient.swift; sourceTree = "<group>"; };
 		EEF1FB8C24A60F0900B71771 /* ImageSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchResponse.swift; sourceTree = "<group>"; };
 		EEF1FB9024A6103500B71771 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			children = (
 				EED6C58B24A1E07A008CFBBD /* AppDelegate.swift */,
 				EED6C58D24A1E07A008CFBBD /* SceneDelegate.swift */,
+				EEEAB44C24AB284B00FFD500 /* AppInitializer.swift */,
 				EED6C58F24A1E07A008CFBBD /* WelcomeViewController.swift */,
 				EEB8601524A1EBD100EBFDF9 /* LevelSelectionViewController.swift */,
 				EEB8601924A1ED0E00EBFDF9 /* LevelBrowserViewController.swift */,
@@ -125,6 +130,7 @@
 			children = (
 				EEB8601D24A1EE8E00EBFDF9 /* Debugger.xcdatamodeld */,
 				EEB8602024A1F57200EBFDF9 /* DataController.swift */,
+				EEEAB44E24AB29C600FFD500 /* DefaultLevels.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEEAB44F24AB29C600FFD500 /* DefaultLevels.swift in Sources */,
 				EEF1FB9124A6103500B71771 /* ImageInfo.swift in Sources */,
 				EEF1FB8D24A60F0900B71771 /* ImageSearchResponse.swift in Sources */,
 				EEB8601824A1EBF500EBFDF9 /* LevelMakerViewController.swift in Sources */,
@@ -274,6 +281,7 @@
 				EEB8601A24A1ED0E00EBFDF9 /* LevelBrowserViewController.swift in Sources */,
 				EEB8602124A1F57200EBFDF9 /* DataController.swift in Sources */,
 				EEB8601C24A1ED6900EBFDF9 /* PlayerViewController.swift in Sources */,
+				EEEAB44D24AB284B00FFD500 /* AppInitializer.swift in Sources */,
 				EED6C58C24A1E07A008CFBBD /* AppDelegate.swift in Sources */,
 				EEEAB44724AB1E7D00FFD500 /* Sound.swift in Sources */,
 				EE93A1E124A7097D0039559D /* UIViewController+Extensions.swift in Sources */,

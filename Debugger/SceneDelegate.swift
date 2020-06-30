@@ -23,6 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dataController = DataController(modelName: modelName)
         dataController.load()
         
+        if !UserDefaults.standard.bool(forKey: AppDelegate.keyForHasInitDefaultLevels) {
+            let appInitializer = AppInitializer()
+            appInitializer.dataController = dataController
+            appInitializer.initialize()
+        }
+        
         let navigationController = window?.rootViewController as! UINavigationController
         let welcomeViewController = navigationController.topViewController as! WelcomeViewController
         welcomeViewController.dataController = dataController

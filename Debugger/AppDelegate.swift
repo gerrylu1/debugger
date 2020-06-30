@@ -13,9 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Properties
     static let keyForHasLaunchedBefore = "hasLaunchedBefore"
+    static let keyForHasInitDefaultLevels = "hasInitDefaultLevels"
+    static let keyForHasReadTipForLevelMaker = "hasReadTipForLevelMaker"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        checkIfFirstLaunch()
         return true
     }
 
@@ -32,7 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
+    
+    // MARK: - App Initializer
+    
+    func checkIfFirstLaunch() {
+        if !UserDefaults.standard.bool(forKey: AppDelegate.keyForHasLaunchedBefore) {
+            UserDefaults.standard.set(true, forKey: AppDelegate.keyForHasLaunchedBefore)
+            UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasInitDefaultLevels)
+            UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasReadTipForLevelMaker)
+        }
+    }
+    
 }
 

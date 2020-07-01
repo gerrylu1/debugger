@@ -39,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE07A24924AC7E5E0073F3CA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EE3C5A6324A5350700E6454C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		EE5FEAA224AA04E800714E0B /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		EE93A1DE24A708F60039559D /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 		EED6C57F24A1E07A008CFBBD = {
 			isa = PBXGroup;
 			children = (
+				EE07A24924AC7E5E0073F3CA /* README.md */,
 				EED6C58A24A1E07A008CFBBD /* Debugger */,
 				EED6C58924A1E07A008CFBBD /* Products */,
 			);

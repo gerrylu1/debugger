@@ -245,8 +245,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Picker in Level Maker obtains images from Pixabay API" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdk-Xx-fyR">
-                                        <rect key="frame" x="0.0" y="406.5" width="374" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Picker in Level Maker obtains images by using Pixabay API" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdk-Xx-fyR">
+                                        <rect key="frame" x="0.0" y="406.5" width="359.5" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -411,7 +411,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O1A-fE-CT1">
-                                <rect key="frame" x="41" y="181" width="332" height="534"/>
+                                <rect key="frame" x="41" y="196" width="332" height="534"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6hB-ME-07h">
                                         <rect key="frame" x="16" y="16" width="300" height="110"/>
@@ -543,7 +543,7 @@
                             <constraint firstItem="MGd-iR-91m" firstAttribute="bottom" secondItem="pEd-mr-v6S" secondAttribute="bottom" id="8BD-vK-uKO"/>
                             <constraint firstItem="MGd-iR-91m" firstAttribute="leading" secondItem="pEd-mr-v6S" secondAttribute="leading" id="I4m-N9-u0n"/>
                             <constraint firstItem="MGd-iR-91m" firstAttribute="trailing" secondItem="pEd-mr-v6S" secondAttribute="trailing" id="d3e-KJ-4F3"/>
-                            <constraint firstItem="O1A-fE-CT1" firstAttribute="centerY" secondItem="pEd-mr-v6S" secondAttribute="centerY" id="hnh-TY-U7j"/>
+                            <constraint firstItem="O1A-fE-CT1" firstAttribute="centerY" secondItem="pEd-mr-v6S" secondAttribute="centerY" constant="15" id="hnh-TY-U7j"/>
                             <constraint firstItem="O1A-fE-CT1" firstAttribute="centerX" secondItem="pEd-mr-v6S" secondAttribute="centerX" id="vZx-tG-RZi"/>
                             <constraint firstItem="MGd-iR-91m" firstAttribute="top" secondItem="pEd-mr-v6S" secondAttribute="top" id="zDg-Pp-yxe"/>
                         </constraints>

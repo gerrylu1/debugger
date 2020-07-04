@@ -58,7 +58,7 @@ class PixabayClient {
             task.resume()
             return task
         } else {
-            completion(nil, nil) // invalid URL error doesn't need to be handled since it will fail silently
+            completion(nil, PixabayClientError.invalidURLError)
             return nil
         }
     }

@@ -3,7 +3,11 @@ Debugger is a simple bug squashing game. You can play default levels or create y
 
 
 ## Using This App
-To use this app, you will need to have **Xcode 11** installed on your macOS. Simply open the project file and run this app on either an emulator or a real device.
+To use this app, you need to have Xcode 11 installed on your macOS. You also need to request an API key from [Pixabay](https://pixabay.com/). Simply open the project file and replace **Secrets.apiKey** in
+```
+static let apiKey = Secrets.apiKey
+```
+at the top of the class definition in PixabayClient.swift with your own API key and run this app on either an emulator or a real device.
 
 ### Main Interface
 [![main.png](https://i.postimg.cc/rp9vqTYS/main.png)](https://postimg.cc/KKR956bz)

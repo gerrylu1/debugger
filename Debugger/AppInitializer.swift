@@ -32,8 +32,10 @@ class AppInitializer {
             if let bgImage = defaultLevel.bgImage {
                 level.bgImage = bgImage.jpegData(compressionQuality: 0.7)
             }
-            for bug in defaultLevel.bugs {
+            for i in 0..<defaultLevel.bugs.count {
+                let bug = defaultLevel.bugs[i]
                 let newBug = Bug(context: dataController.viewContext)
+                newBug.index = Int32(i)
                 newBug.xLocation = bug.xLocation
                 newBug.yLocation = bug.yLocation
                 newBug.size = bug.size

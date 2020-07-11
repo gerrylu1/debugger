@@ -191,8 +191,10 @@ class LevelMakerViewController: UIViewController {
         if let bgImage = bgImage {
             newLevel.bgImage = bgImage.jpegData(compressionQuality: compressionQuality)
         }
-        for bug in bugs {
+        for i in 0..<bugs.count {
+            let bug = bugs[i]
             let newBug = Bug(context: dataController.viewContext)
+            newBug.index = Int32(i)
             newBug.xLocation = Double(bug.frame.origin.x)
             newBug.yLocation = Double(bug.frame.origin.y)
             newBug.size = Double(bug.frame.size.width)

@@ -8,6 +8,7 @@
         <attribute name="webformatURL" attributeType="String"/>
     </entity>
     <entity name="Bug" representedClassName="Bug" syncable="YES" codeGenerationType="class">
+        <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="size" attributeType="Double" defaultValueString="50" usesScalarValueType="YES"/>
         <attribute name="xLocation" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="yLocation" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
@@ -30,7 +31,7 @@
     </entity>
     <elements>
         <element name="BGImage" positionX="-80.3046875" positionY="-199.25390625" width="128" height="118"/>
-        <element name="Bug" positionX="155.77734375" positionY="9.03125" width="128" height="103"/>
+        <element name="Bug" positionX="155.77734375" positionY="9.03125" width="128" height="118"/>
         <element name="Level" positionX="-82.68359375" positionY="-29.2421875" width="128" height="133"/>
         <element name="Stat" positionX="-276.21875" positionY="21.80078125" width="128" height="118"/>
     </elements>

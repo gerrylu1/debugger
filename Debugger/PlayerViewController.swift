@@ -81,6 +81,8 @@ class PlayerViewController: UIViewController {
         let fetchRequest: NSFetchRequest<Bug> = Bug.fetchRequest()
         let predicate = NSPredicate(format: "level == %@", level)
         fetchRequest.predicate = predicate
+        let sortByIndex = NSSortDescriptor(key: "index", ascending: true)
+        fetchRequest.sortDescriptors = [sortByIndex]
         do {
             let result = try dataController.viewContext.fetch(fetchRequest)
             bugs = result
@@ -197,7 +199,7 @@ class PlayerViewController: UIViewController {
             let x = location.x
             let y = location.y
             var bugFound = false
-            for i in (0...(bugViews.count - 1)).reversed() {
+            for i in (0..<bugViews.count).reversed() {
                 let bugView = bugViews[i]
                 let bugX = bugView.frame.origin.x
                 let bugY = bugView.frame.origin.y

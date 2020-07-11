@@ -23,6 +23,7 @@ class PlayerViewController: UIViewController {
     var dataController: DataController!
     var level: Level!
     var bugs: [Bug] = []
+    var bugViews: [UIImageView] = []
     
     var kills: Int = 0
     var misses: Int = 0
@@ -55,13 +56,13 @@ class PlayerViewController: UIViewController {
     }
     
     private func displayTip() {
-        showAlert(title: "Tip", message: "Tap on a bug to kill it. If you tap on an empty space, it will count as missed. The objective is to eliminate all bugs as quickly as possible. The timer will start once you tap on a bug or an empty space.", on: self)
+        showAlert(title: "Tip", message: "Tap on a bug to kill it. If you tap on an empty space, it will count as missed. The objective is to eliminate all bugs as quickly as possible. The timer will start once you tap on a bug or an empty space. Multiple touch is not allowed.", on: self)
     }
     
     private func setupPlayArea() {
         playArea.layer.borderColor = UIColor.black.cgColor
         playArea.layer.borderWidth = 1
-        let touchDownOnPlayArea = UILongPressGestureRecognizer(target: self, action: #selector(self.missedTap(_:)))
+        let touchDownOnPlayArea = UILongPressGestureRecognizer(target: self, action: #selector(self.tapOnPlayArea(_:)))
         touchDownOnPlayArea.minimumPressDuration = 0
         playArea.addGestureRecognizer(touchDownOnPlayArea)
     }
@@ -99,10 +100,8 @@ class PlayerViewController: UIViewController {
         for bug in bugs {
             let bugView = UIImageView(frame: CGRect(x: bug.xLocation, y: bug.yLocation, width: bug.size, height: bug.size))
             bugView.image = UIImage(named: "Bug")
-            bugView.isUserInteractionEnabled = true
-            let touchDownOnBug = UILongPressGestureRecognizer(target: self, action: #selector(self.removeBug(_:)))
-            touchDownOnBug.minimumPressDuration = 0
-            bugView.addGestureRecognizer(touchDownOnBug)
+            bugView.isUserInteractionEnabled = false
+            bugViews.append(bugView)
             playArea.addSubview(bugView)
         }
     }
@@ -171,7 +170,6 @@ class PlayerViewController: UIViewController {
             }
             let bugView = gestureRecognizer.view as! UIImageView
             bugView.image = UIImage(named: "BugSquashed")
-            bugView.isUserInteractionEnabled = false
             UIView.animate(withDuration: 0.5) {
                 bugView.alpha = 0
             }
@@ -179,12 +177,43 @@ class PlayerViewController: UIViewController {
         }
     }
     
-    @objc private func missedTap(_ gestureRecognizer: UIGestureRecognizer) {
+    private func removeBug(_ bugView: UIImageView) {
+        kills += 1
+        killedLabel.text = String("Killed: \(kills)")
+        if kills == bugs.count {
+            levelCleared()
+        }
+        bugView.image = UIImage(named: "BugSquashed")
+        UIView.animate(withDuration: 0.5) {
+            bugView.alpha = 0
+        }
+        Sound.play(file: "squashed.mp3")
+    }
+    
+    @objc private func tapOnPlayArea(_ gestureRecognizer: UIGestureRecognizer) {
         if !isFinished && gestureRecognizer.state == .began {
             startTimerOnce()
-            misses += 1
-            missedLabel.text = String("Missed: \(misses)")
-            Sound.play(file: "missed.mp3")
+            let location = gestureRecognizer.location(in: playArea)
+            let x = location.x
+            let y = location.y
+            var bugFound = false
+            for i in (0...(bugViews.count - 1)).reversed() {
+                let bugView = bugViews[i]
+                let bugX = bugView.frame.origin.x
+                let bugY = bugView.frame.origin.y
+                let bugSize = bugView.frame.width
+                if x > bugX && x < bugX + bugSize && y > bugY && y < bugY + bugSize {
+                    bugViews.remove(at: i)
+                    removeBug(bugView)
+                    bugFound = true
+                    break
+                }
+            }
+            if !bugFound {
+                misses += 1
+                missedLabel.text = String("Missed: \(misses)")
+                Sound.play(file: "missed.mp3")
+            }
         }
     }
     

@@ -31,8 +31,9 @@ class ImagePickerViewController: UIViewController {
     
     // set the desired layout for collection view
     let approximateDimensionForCellsInPhone:Int = 120
-    let approximateDimensionForCellsInPad:Int = 180
-    let spacingForCells:CGFloat = 3.0
+    let approximateDimensionForCellsInPad:Int = 150
+    let spacingForCells: CGFloat = 2.0
+    let collectionViewInset: CGFloat = 5.0
     
     var approximateDimensionForCells:Int {
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -50,9 +51,13 @@ class ImagePickerViewController: UIViewController {
         super.viewDidLoad()
         setupFetchedResultsController()
         registerCollectionViewCells()
-        flowLayoutAdjustment(width: collectionView.frame.size.width)
         checkStoredImages()
         setupBackgroundForDownloadingIndicator()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        flowLayoutAdjustment(width: view.safeAreaLayoutGuide.layoutFrame.width)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -67,10 +72,11 @@ class ImagePickerViewController: UIViewController {
     
     private func flowLayoutAdjustment(width: CGFloat) {
         if isViewLoaded {
-            let numberOfItemsInRow:Int = Int(width) / approximateDimensionForCells
-            let dimension:CGFloat = width / CGFloat(numberOfItemsInRow) - spacingForCells * 2.0
+            let numberOfItemsInRow: Int = Int(width) / approximateDimensionForCells
+            let dimension: CGFloat = (width - collectionViewInset * 2) / CGFloat(numberOfItemsInRow) - spacingForCells
+            flowLayout.sectionInset = .init(top: collectionViewInset, left: collectionViewInset, bottom: collectionViewInset,right: collectionViewInset)
             flowLayout.minimumInteritemSpacing = spacingForCells
-            flowLayout.minimumLineSpacing = spacingForCells * 2
+            flowLayout.minimumLineSpacing = spacingForCells
             flowLayout.itemSize = CGSize(width: dimension, height: dimension)
         }
     }

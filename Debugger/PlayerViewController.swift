@@ -25,6 +25,10 @@ class PlayerViewController: UIViewController {
     var bugs: [Bug] = []
     var bugViews: [UIImageView] = []
     
+    let playAreaSize: Double = 300
+    let bgImageNames: [String] = ["Autumn", "LadyBug", "Lake", "Lake2", "Leaves", "Meadow", "OkerDam", "Peony", "Rabbit", "Sunflower", "Truebsee"]
+    
+    var total: Int = 1
     var kills: Int = 0
     var misses: Int = 0
     var timeAtFirstTap = Date()
@@ -38,8 +42,13 @@ class PlayerViewController: UIViewController {
         setupBlurEffectForView(gamePanel)
         setupBlurEffectForView(topButtonView)
         setupPlayArea()
-        loadBGImage()
-        fetchBugs()
+        if level.name == DefaultLevels.randomLevelEasy || level.name == DefaultLevels.randomLevelNormal || level.name == DefaultLevels.randomLevelHard || level.name == DefaultLevels.randomLevelCrazy || level.name == DefaultLevels.randomLevelInsane {
+            loadRandomBGImage()
+            generateBugs()
+        } else {
+            loadBGImage()
+            fetchBugs()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +101,40 @@ class PlayerViewController: UIViewController {
         }
     }
     
+    private func loadRandomBGImage() {
+        let bgImageName = bgImageNames[Int.random(in: 0..<bgImageNames.count)]
+        bgImageView.image = UIImage(named: bgImageName)
+    }
+    
+    private func generateBugs() {
+        var difficultyIndex = 0
+        let baseTotals: [Int] = [3, 10, 35, 100, 350]
+        let potentialBonusTotals: [Int] = [3, 10, 20, 25, 150]
+        let baseBugSizes: [Double] = [105, 85, 75, 60, 35]
+        let potentialBugShrink: [Double] = [20, 20, 35, 35, 10]
+        switch level.name {
+        case DefaultLevels.randomLevelEasy:
+            difficultyIndex = 0
+        case DefaultLevels.randomLevelNormal:
+            difficultyIndex = 1
+        case DefaultLevels.randomLevelHard:
+            difficultyIndex = 2
+        case DefaultLevels.randomLevelCrazy:
+            difficultyIndex = 3
+        case DefaultLevels.randomLevelInsane:
+            difficultyIndex = 4
+        default:
+            difficultyIndex = 0
+        }
+        total = baseTotals[difficultyIndex] + Int.random(in: 0...potentialBonusTotals[difficultyIndex])
+        for _ in 0..<total {
+            let bugSize = baseBugSizes[difficultyIndex] - Double.random(in: 0...potentialBugShrink[difficultyIndex])
+            let x = Double.random(in: 0...(playAreaSize - bugSize))
+            let y = Double.random(in: 0...(playAreaSize - bugSize))
+            createBug(x: x, y: y, size: bugSize)
+        }
+    }
+    
     private func loadBGImage() {
         if let imageData = level.bgImage, let image = UIImage(data: imageData) {
             bgImageView.image = image
@@ -99,13 +142,18 @@ class PlayerViewController: UIViewController {
     }
     
     private func loadBugs() {
+        total = bugs.count
         for bug in bugs {
-            let bugView = UIImageView(frame: CGRect(x: bug.xLocation, y: bug.yLocation, width: bug.size, height: bug.size))
-            bugView.image = UIImage(named: "Bug")
-            bugView.isUserInteractionEnabled = false
-            bugViews.append(bugView)
-            playArea.addSubview(bugView)
+            createBug(x: bug.xLocation, y: bug.yLocation, size: bug.size)
         }
+    }
+    
+    private func createBug(x: Double, y: Double, size: Double) {
+        let bugView = UIImageView(frame: CGRect(x: x, y: y, width: size, height: size))
+        bugView.image = UIImage(named: "Bug")
+        bugView.isUserInteractionEnabled = false
+        bugViews.append(bugView)
+        playArea.addSubview(bugView)
     }
     
     private func timeElapsed() -> Double {
@@ -167,7 +215,7 @@ class PlayerViewController: UIViewController {
             startTimerOnce()
             kills += 1
             killedLabel.text = String("Killed: \(kills)")
-            if kills == bugs.count {
+            if kills == total {
                 levelCleared()
             }
             let bugView = gestureRecognizer.view as! UIImageView
@@ -182,7 +230,7 @@ class PlayerViewController: UIViewController {
     private func removeBug(_ bugView: UIImageView) {
         kills += 1
         killedLabel.text = String("Killed: \(kills)")
-        if kills == bugs.count {
+        if kills == total {
             levelCleared()
         }
         bugView.image = UIImage(named: "BugSquashed")

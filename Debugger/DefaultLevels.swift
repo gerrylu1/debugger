@@ -23,6 +23,12 @@ struct BugForDefaultLevel {
 
 class DefaultLevels {
     
+    static let randomLevelEasy = "Random Level (Easy) ⭐"
+    static let randomLevelNormal = "Random Level (Normal) 🌟"
+    static let randomLevelHard = "Random Level (Hard) 💢"
+    static let randomLevelCrazy = "Random Level (Crazy) 🔥"
+    static let randomLevelInsane = "Random Level (Insane) ☄️"
+    
     let dateFormatter: DateFormatter
     var defaultLevels: [DefaultLevel] = []
     
@@ -38,6 +44,7 @@ class DefaultLevels {
         createLevel3()
         createLevel4()
         createLevel5()
+        createRandomLevels()
     }
     
     func createLevel1() {
@@ -130,6 +137,20 @@ class DefaultLevels {
         let bug32 = BugForDefaultLevel(size: 30.0, xLocation: 243.9, yLocation: 209.6)
         let level5 = DefaultLevel(name: "Level 5", dateCreated: dateFormatter.date(from: "2020-06-29 17:05:00")!, bgImage: UIImage(named: "DefaultLevelBackground"), bugs: [bug1, bug2, bug3, bug4, bug5, bug6, bug7, bug8, bug9, bug10, bug11, bug12, bug13, bug14, bug15, bug16, bug17, bug18, bug19, bug20, bug21, bug22, bug23, bug24, bug25, bug26, bug27, bug28, bug29, bug30, bug31, bug32])
         defaultLevels.append(level5)
+    }
+    
+    func createRandomLevels() {
+        let bug = BugForDefaultLevel(size: 100.0, xLocation: 100.0, yLocation: 100.0)
+        let randomLevelEasy = DefaultLevel(name: DefaultLevels.randomLevelEasy, dateCreated: dateFormatter.date(from: "2020-06-29 17:06:00")!, bgImage: UIImage(named: "DefaultLevelBackground"), bugs: [bug])
+        let randomLevelNormal = DefaultLevel(name: DefaultLevels.randomLevelNormal, dateCreated: dateFormatter.date(from: "2020-06-29 17:06:01")!, bgImage: UIImage(named: "DefaultLevelBackground"), bugs: [bug])
+        let randomLevelHard = DefaultLevel(name: DefaultLevels.randomLevelHard, dateCreated: dateFormatter.date(from: "2020-06-29 17:06:02")!, bgImage: UIImage(named: "DefaultLevelBackground"), bugs: [bug])
+        let randomLevelCrazy = DefaultLevel(name: DefaultLevels.randomLevelCrazy, dateCreated: dateFormatter.date(from: "2020-06-29 17:06:03")!, bgImage: UIImage(named: "DefaultLevelBackground"), bugs: [bug])
+        let randomLevelInsane = DefaultLevel(name: DefaultLevels.randomLevelInsane, dateCreated: dateFormatter.date(from: "2020-06-29 17:06:04")!, bgImage: UIImage(named: "DefaultLevelBackground"), bugs: [bug])
+        defaultLevels.append(randomLevelEasy)
+        defaultLevels.append(randomLevelNormal)
+        defaultLevels.append(randomLevelHard)
+        defaultLevels.append(randomLevelCrazy)
+        defaultLevels.append(randomLevelInsane)
     }
     
 }

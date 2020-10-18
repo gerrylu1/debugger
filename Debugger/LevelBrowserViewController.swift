@@ -48,7 +48,7 @@ class LevelBrowserViewController: UIViewController {
         do {
             try dataController.save()
         } catch {
-            showAlert(title: "Failed to Delete Level", message: error.localizedDescription, on: self)
+            showAlert(title: "Failed to delete Level", message: error.localizedDescription, on: self)
         }
     }
     
@@ -70,7 +70,7 @@ extension LevelBrowserViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            showAlertOnDelete(title: "Delete \(fetchedResultsController.object(at: indexPath).name ?? "This Level")", message: "Are you sure you want to delete this level?", on: self) {
+            showAlertOnDelete(title: "Delete \(fetchedResultsController.object(at: indexPath).name ?? "This Level")?", message: "Are you sure you want to delete this level? The records associated with this level will also be deleted.", on: self) {
                 self.deleteLevel(at: indexPath)
             }
         default: () // Unsupported

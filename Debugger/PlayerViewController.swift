@@ -42,7 +42,7 @@ class PlayerViewController: UIViewController {
         setupBlurEffectForView(gamePanel)
         setupBlurEffectForView(topButtonView)
         setupPlayArea()
-        if level.name == DefaultLevels.randomLevelEasy || level.name == DefaultLevels.randomLevelNormal || level.name == DefaultLevels.randomLevelHard || level.name == DefaultLevels.randomLevelCrazy || level.name == DefaultLevels.randomLevelInsane {
+        if (level.name == DefaultLevels.randomLevelEasy || level.name == DefaultLevels.randomLevelNormal || level.name == DefaultLevels.randomLevelHard || level.name == DefaultLevels.randomLevelCrazy || level.name == DefaultLevels.randomLevelInsane) && !level.isCustom {
             loadRandomBGImage()
             generateBugs()
         } else {

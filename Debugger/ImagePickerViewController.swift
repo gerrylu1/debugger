@@ -35,7 +35,7 @@ class ImagePickerViewController: UIViewController {
     let spacingForCells: CGFloat = 2.0
     let collectionViewInset: CGFloat = 5.0
     
-    var approximateDimensionForCells:Int {
+    var approximateDimensionForCells: Int {
         if UIDevice.current.userInterfaceIdiom == .pad {
             return approximateDimensionForCellsInPad
         }
@@ -44,6 +44,7 @@ class ImagePickerViewController: UIViewController {
         }
         else {
             assert(false, "The user is using an unrecognized device")
+            return approximateDimensionForCellsInPhone
         }
     }
     

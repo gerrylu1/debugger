@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Properties
     static let keyForHasLaunchedBefore = "hasLaunchedBefore"
+    static let keyForCurrentReleaseNumber = "currentReleaseNumber"
     static let keyForHasInitDefaultLevels = "hasInitDefaultLevels"
     static let keyForHasDisplayedTipForPlayer = "hasDisplayedTipForPlayer"
     static let keyForHasDisplayedTipForLevelMaker = "hasDisplayedTipForLevelMaker"
+    static let randomLevelsProductID = "com.000webhostapp.gerrylu.Debugger.RandomLevels"
+    
+    let currentReleaseNumber = VersionToReleaseNumber.v1_0_1.rawValue
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,9 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func checkIfFirstLaunch() {
         if !UserDefaults.standard.bool(forKey: AppDelegate.keyForHasLaunchedBefore) {
             UserDefaults.standard.set(true, forKey: AppDelegate.keyForHasLaunchedBefore)
+            UserDefaults.standard.set(currentReleaseNumber, forKey: AppDelegate.keyForCurrentReleaseNumber)
             UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasInitDefaultLevels)
             UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasDisplayedTipForPlayer)
             UserDefaults.standard.set(false, forKey: AppDelegate.keyForHasDisplayedTipForLevelMaker)
+            UserDefaults.standard.set(false, forKey: AppDelegate.randomLevelsProductID)
         }
     }
     

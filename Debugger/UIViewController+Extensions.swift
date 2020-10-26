@@ -34,4 +34,16 @@ extension UIViewController {
         viewController.present(alertVC, animated: true, completion: nil)
     }
     
+    func showAlertTwoActionsWithCancel(title: String?, message: String?, on viewController: UIViewController, actionOneTitle: String, actionTwoTitle: String, actionOneCompletion: @escaping () -> Void, actionTwoCompletion: @escaping () -> Void) {
+        let alertVC = UIAlertController(title: title ?? "", message: message ?? "Unknown message.", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: actionOneTitle, style: .default, handler: { (_) in
+            actionOneCompletion()
+        }))
+        alertVC.addAction(UIAlertAction(title: actionTwoTitle, style: .default, handler: { (_) in
+            actionTwoCompletion()
+        }))
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        viewController.present(alertVC, animated: true, completion: nil)
+    }
+    
 }
